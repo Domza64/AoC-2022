@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Day_1 {
     private static final File FILE = new File(System.getProperty("user.dir") + "/src/input/input-1.txt");
 
-    public static int solution() {
+    public static int partOne() {
         Scanner scanner = newScanner();
         int maxCalories = 0;
         int tempCalories = 0;
@@ -25,7 +25,7 @@ public class Day_1 {
         return maxCalories;
     }
 
-    public static int solution_2() {
+    public static int partTwo() {
         Scanner scanner = newScanner();
         ArrayList<Integer> list = new ArrayList<>();
         int tempCalories = 0;
