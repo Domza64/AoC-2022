@@ -8,8 +8,12 @@ public class Main {
 //        System.out.println("Solution for Day 2 part 2 is: " + Day_2.partTwo());
 //        System.out.println("-----------------------------------------------|");
 
-        System.out.println("Solution for Day 3 is: " + Day_3.partOne());
-        System.out.println("Solution for Day 3 part 2 is: " + Day_3.partTwo());
+//        System.out.println("Solution for Day 3 is: " + Day_3.partOne());
+//        System.out.println("Solution for Day 3 part 2 is: " + Day_3.partTwo());
+//        System.out.println("-----------------------------------------------|");
+
+        System.out.println("Solution for Day 4 is: " + Day_4.partOne());
+        System.out.println("Solution for Day 4 part 2 is: " + Day_4.partTwo());
         System.out.println("-----------------------------------------------|");
     }
 }
