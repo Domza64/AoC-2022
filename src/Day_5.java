@@ -7,6 +7,7 @@ public class Day_5 {
     /*
     * This is incredibly and unrealisticly bad solution don't look pls I just wanted to get it done and I didnt have much time because work and life and I just wanted to make this work,
     * no matter how shitty unoptimized code it takes...
+    * At this point unironically worst code ever this is do not look any further especially part 2
     * */
     private static final File FILE = new File(System.getProperty("user.dir") + "/src/input/input-5.txt");
     private static final int NO_OF_STACKS = 9;
@@ -17,8 +18,10 @@ public class Day_5 {
         return rearrangeCreates(listOfStacks, scanner);
     }
 
-    public static int partTwo() {
-        return -1;
+    public static String partTwo() {
+        Scanner scanner = newScanner();
+        ArrayList<ArrayList<String>> listOfStacks = getCreateArrangement(scanner);
+        return rearrangeCreatesTwo(listOfStacks, scanner);
     }
 
     private static String rearrangeCreates(ArrayList<ArrayList<String>> list, Scanner scanner) {
@@ -50,6 +53,39 @@ public class Day_5 {
 
         return solution.toString();
     }
+
+    private static String rearrangeCreatesTwo(ArrayList<ArrayList<String>> list, Scanner scanner) {
+        while (scanner.hasNextLine()) {
+            String s = scanner.nextLine();
+            if (s.equals("")) return "THAS ENDE MI FREND";
+            String[] split = s.replaceAll("[^\\d.]", " ").strip().split("\\W+");
+
+            int amount = Integer.parseInt(split[0]);
+            int moveFrom = Integer.parseInt(split[1]);
+            int moveTo = Integer.parseInt(split[2]);
+
+            ArrayList<String> listToMoveTo = list.get(moveTo - 1);
+            ArrayList<String> listToRemoveFrom = list.get(moveFrom - 1);
+            ArrayList<String> stupidTempList = new ArrayList<>();
+            for (int i = 0; i < amount; i++) {
+                // Most shitty solution ever created, should probably use deque or some s**t but no I just want to make this work soo I am done with this.
+                stupidTempList.add(listToRemoveFrom.get(0));
+                listToRemoveFrom.remove(0);
+            }
+            Collections.reverse(stupidTempList);
+            Collections.reverse(listToMoveTo);
+            listToMoveTo.addAll(stupidTempList);
+            Collections.reverse(listToMoveTo);
+        }
+
+        StringBuilder solution = new StringBuilder();
+        for (ArrayList<String> aList : list) {
+            solution.append(aList.get(0));
+        }
+
+        return solution.toString();
+    }
+
 
     private static ArrayList<ArrayList<String>> getCreateArrangement(Scanner scanner) {
 
