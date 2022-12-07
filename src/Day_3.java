@@ -56,7 +56,7 @@ public class Day_3 {
             }
 
             if (tempSet.size() > 1) {
-                System.err.println("more thean one of the same items");
+                System.err.println("more than one of the same items");
             }
             else {
                 sum += getPriorityNum(tempSet.toString().charAt(1));

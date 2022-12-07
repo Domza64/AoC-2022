@@ -43,7 +43,6 @@ public class Day_4 {
                 sum++;
             }
         }
-        // Ans 945 -> Too High
         return sum;
     }
 
