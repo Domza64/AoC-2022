@@ -7,7 +7,7 @@ public class Day_6 {
     private static final File FILE = new File(System.getProperty("user.dir") + "/src/input/input-6.txt");
 
     public static void main(String[] args) {
-        System.out.println("Part 2: " + getMarkerNum(4));
+        System.out.println("Part 1: " + getMarkerNum(4));
         System.out.println("Part 2: " + getMarkerNum(14));
     }
 
@@ -31,6 +31,8 @@ public class Day_6 {
 
             return i + startOfMessageMarker;
         }
+
+        System.err.println("Marker not found!");
         return -1;
     }
 
